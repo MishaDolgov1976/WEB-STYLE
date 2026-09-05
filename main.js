@@ -88,8 +88,8 @@ var mixer = mixitup(".work-container", {
 const linkWork = document.querySelectorAll(".work-item");
 
 function activeWork() {
-  linkWork.forEach((a) => {
-    a.classList.remove("active-work");
+  linkWork.forEach(function (a) {
+    a.addEventListener("click", activeWork);
   });
 
   this.classList.add("active-work");
@@ -146,11 +146,11 @@ var servicesSwiper = new Swiper(".testimonials-swiper", {
 /*testimonials finish */
 /*Mail JS */
 const contactForm = document.getElementById("contact-form");
-(contactName = document.getElementById("contact-nane")),
+((contactName = document.getElementById("contact-nane")),
   (contactEmail = document.getElementById("contact-email")),
-  (contactSubject = document.getElementById("contact-subject"));
-(contactMessage = document.getElementById("contact-message")),
-  (message = document.getElementById("message"));
+  (contactSubject = document.getElementById("contact-subject")));
+((contactMessage = document.getElementById("contact-message")),
+  (message = document.getElementById("message")));
 
 const sendEmail = (e) => {
   e.preventDefault();
@@ -174,11 +174,11 @@ const sendEmail = (e) => {
         "service_i22d16d",
         "template_39mkbeu",
         "#contact-form",
-        "0dx_jlN2nzuCIULXx"
+        "0dx_jlN2nzuCIULXx",
       )
       .then(
         () => {
-          massage.classList.add("color-first");
+          message.classList.add("color-first");
           message.textContent = "Сообщение отправлено!";
 
           setTimeout(() => {
@@ -187,7 +187,7 @@ const sendEmail = (e) => {
         },
         (error) => {
           alert("Ошибка!", error);
-        }
+        },
       );
     contactName.value = "";
     contactEmail.value = "";
@@ -231,7 +231,7 @@ const scrollActive = () => {
       sectionTop = current.offsetTop - 58,
       sectionId = current.getAttribute("id"),
       sectionsClass = document.querySelector(
-        ".nav-menu a[href*=" + sectionId + "]"
+        ".nav-menu a[href*=" + sectionId + "]",
       );
 
     if (scrolly > sectionTop && scrollY <= sectionTop + sectionHeight) {
